@@ -9,7 +9,6 @@ html {
     color: antiquewhite;
     font-family: 'Gotu', sans-serif;
     background-image: url(../images/nami.png);
-    overflow-y: scroll;
 }
 
 body {
