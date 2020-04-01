@@ -1,6 +1,6 @@
 import { createNavbar, createBanner } from "./mainPage"
 import { createMenuDiv } from "./menuPage"
-import { createGallery } from "./galleryPage"
+import { createGallery, eventListener } from "./galleryPage"
 import { createContacts } from "./contactPage"
 
 
@@ -21,6 +21,7 @@ const tabNavigator = () => {
                     break;
                 case "Gallery":
                     mainDiv.appendChild(createGallery());
+                    eventListener();
                     break;
                 case "Contacts":
                     mainDiv.appendChild(createContacts());

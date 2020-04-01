@@ -1,7 +1,9 @@
 const createGallery = () => {
+    const galleryContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
     imgContainer.setAttribute("id", "img-container")
     const galleryHeader = document.createElement("h1");
+    galleryHeader.id = "galleryHeader"
     galleryHeader.textContent = "GALLERY"
 
     const mainImgDiv = document.createElement("div");
@@ -20,11 +22,25 @@ const createGallery = () => {
         imagesDiv.appendChild(img)
     }
 
-    imgContainer.appendChild(galleryHeader)
+    galleryContainer.appendChild(galleryHeader)
     imgContainer.appendChild(mainImgDiv);
     imgContainer.appendChild(imagesDiv);
+    galleryContainer.appendChild(imgContainer)
 
-    return imgContainer
+    return galleryContainer
 }
 
-export { createGallery }
+const eventListener = () => {
+    const current = document.getElementById("current")
+    const images = document.querySelectorAll("#images-container img")
+    const opacity = 0.4
+
+    const imageClick = (e) => {
+        images.forEach(img => (img.style.opacity = 1))
+        current.src = e.target.src
+        e.target.style.opacity = opacity
+    }
+    images.forEach(img => img.addEventListener("click", imageClick))
+}
+
+export { createGallery, eventListener }

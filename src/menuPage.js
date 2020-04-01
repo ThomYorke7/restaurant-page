@@ -62,6 +62,9 @@ const createMenuDiv = () => {
         sushiEntry.innerHTML = `${sushiArray[i].id} - ${sushiArray[i].dish} <span class="price">${sushiArray[i].price}</span>`;
         sushiDiv.appendChild(sushiEntry)
     }
+    const sushiImg = document.createElement("div")
+    sushiImg.id = "sushi-img"
+
 
     const sashimiDiv = document.createElement("div")
     const sashimiHeader = document.createElement("h3")
@@ -72,6 +75,8 @@ const createMenuDiv = () => {
         sashimiEntry.innerHTML = `${sashimiArray[i].id} - ${sashimiArray[i].dish} <span class="price">${sashimiArray[i].price}</span>`;
         sashimiDiv.appendChild(sashimiEntry)
     }
+    const sashimiImg = document.createElement("div")
+    sashimiImg.id = "sashimi-img"
 
     const rollsDiv = document.createElement("div")
     const rollsHeader = document.createElement("h3")
@@ -82,10 +87,15 @@ const createMenuDiv = () => {
         rollsEntry.innerHTML = `${rollsArray[i].id} - ${rollsArray[i].dish} <span class="price">${rollsArray[i].price}</span>`;
         rollsDiv.appendChild(rollsEntry)
     }
+    const rollsImg = document.createElement("div")
+    rollsImg.id = "rolls-img"
 
     menuDiv.appendChild(sushiDiv);
     menuDiv.appendChild(sashimiDiv);
     menuDiv.appendChild(rollsDiv);
+    menuDiv.appendChild(sushiImg);
+    menuDiv.appendChild(sashimiImg);
+    menuDiv.appendChild(rollsImg)
 
 
     return menuDiv

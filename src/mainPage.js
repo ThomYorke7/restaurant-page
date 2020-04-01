@@ -4,7 +4,8 @@ const createNavbar = () => {
 
     const divLogo = document.createElement("div");
     const logo = document.createElement("p");
-    logo.textContent = "Tokaido";
+    logo.id = "logo"
+    logo.textContent = "Tokaido | 東海道";
     divLogo.appendChild(logo);
 
     const divLinks = document.createElement("div");
