@@ -47,7 +47,9 @@ createMenuEntry("Scallop Roll", "$6.00", "rolls");
 
 const createMenuDiv = () => {
     const menuDiv = document.createElement("div")
+    menuDiv.id = "menu-container"
     const menuHeader = document.createElement("h1")
+    menuHeader.id = "menu-header"
     menuHeader.textContent = "MENU"
     menuDiv.appendChild(menuHeader)
 

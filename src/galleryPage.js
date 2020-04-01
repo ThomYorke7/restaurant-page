@@ -1,6 +1,8 @@
 const createGallery = () => {
     const imgContainer = document.createElement("div");
     imgContainer.setAttribute("id", "img-container")
+    const galleryHeader = document.createElement("h1");
+    galleryHeader.textContent = "GALLERY"
 
     const mainImgDiv = document.createElement("div");
     mainImgDiv.setAttribute("id", "main-img");
@@ -18,6 +20,7 @@ const createGallery = () => {
         imagesDiv.appendChild(img)
     }
 
+    imgContainer.appendChild(galleryHeader)
     imgContainer.appendChild(mainImgDiv);
     imgContainer.appendChild(imagesDiv);
 

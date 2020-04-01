@@ -1,20 +1,20 @@
-import { createMainPage } from "./mainPage"
+import { createNavbar, createBanner } from "./mainPage"
 import { createMenuDiv } from "./menuPage"
 import { createGallery } from "./galleryPage"
+import { createContacts } from "./contactPage"
 
 
 const mainDiv = document.getElementById("content");
 const tabs = document.getElementsByTagName("a");
 
 const tabNavigator = () => {
-    const banner = document.getElementById("banner")
 
     Array.from(tabs).forEach((element) => {
         element.addEventListener("click", (e) => {
             mainDiv.removeChild(mainDiv.lastChild)
             switch (e.target.textContent) {
                 case "Home":
-                    mainDiv.appendChild(banner)
+                    mainDiv.appendChild(createBanner())
                     break;
                 case "Menu":
                     mainDiv.appendChild(createMenuDiv());
@@ -22,13 +22,18 @@ const tabNavigator = () => {
                 case "Gallery":
                     mainDiv.appendChild(createGallery());
                     break;
+                case "Contacts":
+                    mainDiv.appendChild(createContacts());
+                    break;
             }
         })
     })
 }
 
-createMainPage();
+mainDiv.appendChild(createNavbar())
+mainDiv.appendChild(createBanner())
 
-tabNavigator()
+
+tabNavigator();
 
 
