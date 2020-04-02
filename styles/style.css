@@ -13,7 +13,7 @@ html {
 
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     position: relative;
 }
 
@@ -47,7 +47,7 @@ body {
 /* Main Div */
 #content {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: #191716b6;
 }
 
@@ -159,7 +159,6 @@ body {
     align-items: center;
     width: 80%;
     margin: auto;
-    height: 92vh;
 }
 
 #contacts-header {
@@ -169,12 +168,12 @@ body {
 }
 
 #info-img-container{
-    width: 600px;
+    width: 500px;
     height: 400px;
     background-image: url(../images/restaurant.jpg);
     background-position: bottom;
     background-size: cover;
-    justify-self: center;
+    margin: auto;
 }
 
 #form {
@@ -202,7 +201,7 @@ label, input, select, textarea {
 
 
 /* Media Queries */
-@media (max-width: 750px) {
+@media (max-width: 780px) {
     html {
         font-size: 16px;
     }
@@ -217,12 +216,21 @@ label, input, select, textarea {
         justify-content: center;
     }
 
+    #banner-container{
+        align-items: center;
+        justify-content: center;
+    }
+
+    #banner-container > * {
+        padding: 0 0 2rem 0; 
+    }
+
     #menu-container {
         display: flex;
         flex-direction: column;
         width: 90%;
         margin: auto;
-        justify-items: center;
+        text-align: center;
     }
 
     #sushi-img, #sashimi-img, #rolls-img {
@@ -245,11 +253,15 @@ label, input, select, textarea {
     #contacts-container {
         display: flex;
         flex-direction: column;
-        justify-items: center;
+        justify-content: space-between;
         align-items: center;
         width: 90%;
+        height: 100%;
         margin: auto;
-        height: auto;
+    }
+
+    #form-container {
+        margin-top: 2rem;
     }
 
     #info-img-container{
